@@ -48,7 +48,6 @@ jobs:
           # Ping the server
           jf rt ping
           jf audit --mvn
-          $?
           jf s "./target/*.jar" 
           # Collect environment variables for the build
           jf rt bce
