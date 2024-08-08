@@ -39,20 +39,19 @@ jobs:
           # JFrog Platform access token
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
-          # Basic authentication credentials
-          ## JF_USER: ${{ secrets.JF_USER }}
-          ## JF_PASSWORD: ${{ secrets.JF_PASSWORD }}
-
       - name: Run JFrog CLI
         run: |
           # Ping the server
           jf rt ping
+          # run SAST/SCA/IAC/SECRET scan on the project
           jf audit --mvn --watches "Security_watch_1"
-          jf s "./target/*.jar" --watches "Security_watch_1"
+          # run scan on the binary
+          jf s "./target/*.jar"
           # Collect environment variables for the build
           jf rt bce
           # Collect VCS details from git and add them to the build
           jf rt bag
+          #Upload to Artifactory the binary generated
           jf rt upload "./target/*.jar" petclinic-libs-snapshot-local --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
           # Publish build info
           jf rt bp
@@ -77,15 +76,3 @@ jobs:
           context: .
           push: true
           tags: gdoma.jfrog.io/petclinic-app/peclinic-app:latest
-
-      #- name: Build & push Docker image
-      #  uses: mr-smithers-excellent/docker-build-push@v5
-      #  with:
-      #    image: 5l1d3r/petclinic-app
-      #    tags: latest
-      #    registry: docker.io
-      #    dockerfile: Dockerfile
-      #    username: ${{ secrets.DOCKER_USERNAME }}
-      #    password: ${{ secrets.DOCKER_PASSWORD }}
-      #- name: Build Docker image
-      #  run: ./mvnw spring-boot:build-image
