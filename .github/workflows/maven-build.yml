@@ -27,5 +27,15 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw package
+
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: 5l1d3r/petclinic-app
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       #- name: Build Docker image
       #  run: ./mvnw spring-boot:build-image
