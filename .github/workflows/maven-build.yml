@@ -25,6 +25,7 @@ jobs:
           java-version: ${{matrix.java}}
           distribution: 'adopt'
           cache: maven
+          
       - name: Build with Maven Wrapper
         run: ./mvnw package -DskipTests=true
 
@@ -49,7 +50,7 @@ jobs:
           jf rt bce
           # Collect VCS details from git and add them to the build
           jf rt bag
-          jf rt upload "./target/*.jar" petclinic --build-name a --build-number 1
+          jf rt upload "./target/*.jar" petclinic --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
           # Publish build info
           jf rt bp
       
