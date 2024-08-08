@@ -47,7 +47,7 @@ jobs:
         run: |
           # Ping the server
           jf rt ping
-          jf audit --mvn
+          jf audit --mvn --watches Security_watch_1
           jf s "./target/*.jar" 
           # Collect environment variables for the build
           jf rt bce
