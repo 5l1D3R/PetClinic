@@ -52,7 +52,7 @@ jobs:
           jf rt bce
           # Collect VCS details from git and add them to the build
           jf rt bag
-          jf rt upload "./target/*.jar" petclinic --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
+          jf rt upload "./target/*.jar" petclinic-libs-snapshot-local --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
           # Publish build info
           jf rt bp
       
