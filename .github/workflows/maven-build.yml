@@ -57,7 +57,8 @@ jobs:
           jf rt upload "./target/*.jar" petclinic-libs-snapshot-local --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
           # Publish build info
           jf rt bp
-      
+        continue-on-error: false
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
