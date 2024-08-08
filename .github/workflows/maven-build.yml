@@ -27,8 +27,9 @@ jobs:
           cache: maven
           
       - name: Build with Maven Wrapper
-        run: ./mvnw package dependency:purge-local-repository -s "./settings.xml" -DskipTests=true 
-
+       #Force redowloading lib from Jfrog 
+       #run: ./mvnw package dependency:purge-local-repository -s "./settings.xml" -DskipTests=true 
+        run: ./mvnw package -DskipTests=true   
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
         env:
@@ -47,7 +48,7 @@ jobs:
           # Ping the server
           jf rt ping
           jf audit --mvn
-          echo %errorlevele%
+          echo %errorlevel%
           jf s "./target/*.jar" 
           # Collect environment variables for the build
           jf rt bce
