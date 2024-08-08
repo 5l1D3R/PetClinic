@@ -47,6 +47,7 @@ jobs:
           # Ping the server
           jf rt ping
           jf audit --mvn
+          echo %errorlevele%
           jf s "./target/*.jar" 
           # Collect environment variables for the build
           jf rt bce
