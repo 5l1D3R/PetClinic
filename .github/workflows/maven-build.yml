@@ -48,7 +48,7 @@ jobs:
           # Ping the server
           jf rt ping
           jf audit --mvn --watches "Security_watch_1"
-          jf s "./target/*.jar" 
+          jf s "./target/*.jar" --watches "Security_watch_1"
           # Collect environment variables for the build
           jf rt bce
           # Collect VCS details from git and add them to the build
