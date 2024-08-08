@@ -49,6 +49,7 @@ jobs:
           jf rt bce
           # Collect VCS details from git and add them to the build
           jf rt bag
+          jf rt upload "./target/*.jar" generic-local --build-name a --build-number 1
           # Publish build info
           jf rt bp
       
