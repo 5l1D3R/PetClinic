@@ -45,16 +45,16 @@ jobs:
       - name: Run JFrog CLI
         run: |
           # Ping the server
-          #jf rt ping
-          #jf audit --mvn
-          #jf s "./target/*.jar" 
+          jf rt ping
+          jf audit --mvn
+          jf s "./target/*.jar" 
           # Collect environment variables for the build
-          #jf rt bce
+          jf rt bce
           # Collect VCS details from git and add them to the build
-          #jf rt bag
-          #jf rt upload "./target/*.jar" petclinic --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
+          jf rt bag
+          jf rt upload "./target/*.jar" petclinic --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
           # Publish build info
-          #jf rt bp
+          jf rt bp
       
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
