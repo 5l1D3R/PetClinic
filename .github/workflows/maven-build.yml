@@ -37,9 +37,9 @@ jobs:
             JF_SETTINGS_PWD: ${{ secrets.JF_SETTINGS_PWD }}
             
       - name: Build with Maven Wrapper
-       #Force redowloading lib from Jfrog 
-       # run: ./mvnw package dependency:purge-local-repository -s "./settings.xml" -DskipTests=true 
-        run: ./mvnw package -DskipTests=true   
+       #Force redownloading lib from Jfrog 
+        run: ./mvnw package dependency:purge-local-repository -s "./settings.xml" -DskipTests=true 
+       # run: ./mvnw package -DskipTests=true   
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
         env:
