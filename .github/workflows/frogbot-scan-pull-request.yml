@@ -34,7 +34,7 @@ jobs:
 
           # [Mandatory]
           # The GitHub token is automatically generated for the job
-          JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_GIT_TOKEN: ${{ JF_GIT_TOKEN }}
 
           # [Optional, default: https://api.github.com]
           # API endpoint to GitHub
