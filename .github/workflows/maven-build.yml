@@ -61,7 +61,7 @@ jobs:
           # Collect VCS details from git and add them to the build
           jf rt bag
           #Upload to Artifactory the binary generated
-          jf rt upload "./target/*.jar" petclinic-libs-snapshot-local --build-name PetClinic --build-number ${GITHUB_RUN_NUMBER}
+          jf rt upload "./target/*.jar" petclinic-libs-snapshot-local --build-name Java CI with Maven --build-number ${GITHUB_RUN_NUMBER}
           # Publish build info
           jf rt bp
         continue-on-error: false
