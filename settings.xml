@@ -3,13 +3,13 @@
     xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>gregd.vpn@gmail.com</username>
-      <password>cmVmdGtuOjAxOjE3NTQ2ODE0MDQ6QkI2UnNCVFhNenExTTkwTEhRaVFkQmdnb3Bv</password>
+      <username>#{JF_SETTINGS_EMAIL}</username>
+      <password>#{JF_SETTINGS_PWD}</password>
       <id>central</id>
     </server>
     <server>
-      <username>gregd.vpn@gmail.com</username>
-      <password>cmVmdGtuOjAxOjE3NTQ2ODE0MDQ6QkI2UnNCVFhNenExTTkwTEhRaVFkQmdnb3Bv</password>
+      <username>#{JF_SETTINGS_EMAIL}</username>
+      <password>#{JF_SETTINGS_PWD}</password>
       <id>snapshots</id>
     </server>
   </servers>
