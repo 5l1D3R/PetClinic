@@ -19,7 +19,6 @@ java -jar target/*.jar
 
 You can then access the Petclinic at <http://localhost:8080/>.
 
-<img width="1042" alt="petclinic-screenshot" src="https://github.com/5l1D3R/PetClinic/blob/main/images/Diagram.jpg">
 
 Or you can run it from Maven directly using the Spring Boot Maven plugin. If you do this, it will pick up changes that you make in the project immediately (changes to Java source files require a compile as well - most people use an IDE for this):
 
