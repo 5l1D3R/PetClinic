@@ -38,7 +38,7 @@ jobs:
             
       - name: Build with Maven Wrapper
        #Force redownloading lib from Jfrog 
-        run: ./mvnw package dependency:purge-local-repository -s "./settings.xml" -DskipTests=true 
+        run: ./mvnw package dependency:purge-local-repository -s "./settings.xml"  
        # run: ./mvnw package -DskipTests=true   
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
