@@ -3,8 +3,8 @@
     xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>#{JF_SETTINGS_EMAIL}</username>
-      <password>#{JF_SETTINGS_PWD}</password>
+      <username>{JF_SETTINGS_EMAIL}</username>
+      <password>{JF_SETTINGS_PWD}</password>
       <id>central</id>
     </server>
     <server>
