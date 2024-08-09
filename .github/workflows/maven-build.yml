@@ -26,6 +26,15 @@ jobs:
           distribution: 'adopt'
           cache: maven
           
+      - uses: cschleiden/replace-tokens@v1
+        with:
+          files: './settings.xml'
+          tokenPrefix: '{'
+          tokenSuffix: '}'
+        env:
+          JF_SETTINGS_EMAIL: ${{ secrets.JF_SETTINGS_EMAIL }}
+          JF_SETTINGS_PWD: ${{ secrets.JF_SETTINGS_PWD }}
+
       - name: Build with Maven Wrapper
        #Force redowloading lib from Jfrog 
        #run: ./mvnw package dependency:purge-local-repository -s "./settings.xml" -DskipTests=true 
