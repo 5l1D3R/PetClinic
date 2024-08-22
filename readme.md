@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+ # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
+>>>>>>> 972345ddbbc4048f20af3491dd29e2932986a7f0
 
 # Creating a DevSecOps pipeline with PetClinic application
 
