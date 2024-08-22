@@ -21,7 +21,7 @@ I downloaded the VS Code Jfrog plugin to be able to run scan directly from my ID
 
 ## C ompiling locally
 
-If you want to compile locally, you will need to configure your maven settings files to be able to communicate with Artifactory instance ([Jfrog documentation](https://jfrog.com/help/r/jfrog-artifactory-documentation/resolve-maven-artifacts-through-artifactory))
+If you want to compile locally, you will need to configure your maven settings files to be able to communicate w ith Artifactory instance ([Jfrog documentation](https://jfrog.com/help/r/jfrog-artifactory-documentation/resolve-maven-artifacts-through-artifactory))
 The goal here is to avoid to do the dependency resolution through maven central but through Jfrog Artifactory
 
 You can run this command to see if the dependency resolution works fine, the flag "dependency:purge-local-repository" will force to redownload the dependency instead of using the local cache
